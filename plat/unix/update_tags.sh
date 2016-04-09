@@ -89,7 +89,7 @@ if [ -f "$TAGS_FILE" ]; then
 
         echo "Removing references to: $UPDATED_SOURCE"
         tab="	"
-        cmd="grep -Ev '^[^$tab]+$tab$UPDATED_SOURCE$tab' '$TAGS_FILE' > '$TAGS_FILE.temp'"
+        cmd="grep --text -Ev '^[^$tab]+$tab$UPDATED_SOURCE$tab' '$TAGS_FILE' > '$TAGS_FILE.temp'"
         echo "$cmd"
         eval "$cmd" || true
         INDEX_WHOLE_PROJECT=0
